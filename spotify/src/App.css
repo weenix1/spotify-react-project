@@ -59,7 +59,7 @@
   background-color: #410707;
 }
 
-.card-body .dotted {
+.dotted {
   white-space: nowrap !important;
   text-overflow: ellipsis !important;
   overflow: hidden !important;
@@ -68,17 +68,17 @@
   font-size: small !important;
 }
 
-.card-top img {
-  border-bottom-left-radius: 5px !important;
-  border-top-left-radius: 5px !important;
-}
-
 .card-top {
   background: linear-gradient(#3a1e1e, #3a2f2f) !important;
   border-radius: 5px !important;
-}
-.card {
-  background-color: #272727 !important;
+  border-bottom-left-radius: 5px !important;
+  border-top-left-radius: 5px !important;
+  text-align: center;
+  padding-bottom: 1em;
+  margin: 1em;
+  transform: scale(1);
+  transition: transform 0.3s ease-out;
+  opacity: 0.5;
 }
 
 .container-fluid {
@@ -92,16 +92,9 @@
 }
 .card {
   text-align: center;
+  background-color: #272727 !important;
+  margin-bottom: 10px;
 
-  transform: scale(1);
-  transition: transform 0.3s ease-out;
-  opacity: 0.5;
-}
-
-.card-top {
-  text-align: center;
-  padding-bottom: 1em;
-  margin: 1em;
   transform: scale(1);
   transition: transform 0.3s ease-out;
   opacity: 0.5;

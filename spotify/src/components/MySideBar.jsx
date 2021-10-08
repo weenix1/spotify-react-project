@@ -1,3 +1,6 @@
+import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 const MySideBar = () => {
   return (
     <>
@@ -10,9 +13,9 @@ const MySideBar = () => {
             <a href>
               <i className="bi bi-house-door-fill icons-color-size" />
             </a>
-            <a href="#">
+            <Link to="/home">
               <p className="section-side">Home</p>
-            </a>
+            </Link>
           </div>
         </div>
         <div>
@@ -163,4 +166,4 @@ const MySideBar = () => {
     </>
   );
 };
-export default MySideBar;
+export default withRouter(MySideBar);

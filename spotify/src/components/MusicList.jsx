@@ -61,7 +61,25 @@ const MusicList = () => {
                   <span className="text-muted"> SEE All</span>
                 </p>
               </div>
-              <div className="row py-1 d-flex"></div>
+              <div className="row py-1 d-flex">
+                {data
+                  ? data.map((song) => (
+                      <div className="col-2 h-100">
+                        <div className="card">
+                          <img
+                            src={song.artist.picture}
+                            className="card-img-top"
+                            alt="img-fluid"
+                          />
+                          <div className="card-body">
+                            <h5 className="card-title">{song.artist.title}</h5>
+                            <p className="dotted">{song.artist.name}</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))
+                  : "LOADING..."}
+              </div>
             </div>
           </section>
         </div>
