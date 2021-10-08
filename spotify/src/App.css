@@ -200,6 +200,11 @@ a:link {
   cursor: pointer;
   margin-left: 15px;
 }
+.board-view {
+  height: 90vh;
+  overflow: scroll;
+  padding: 0 !important;
+}
 
 .section-selected-style-list:active {
   background: #282828;

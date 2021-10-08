@@ -1,7 +1,7 @@
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const MySideBar = () => {
+const MySideBar = ({ searchQuery, setSearchQuery }) => {
   return (
     <>
       <div className="col-2 position-aside">
@@ -24,7 +24,12 @@ const MySideBar = () => {
               <i className="bi bi-search icons-color-size" />
             </a>
             <a href="#">
-              <p className="section-side">Search</p>
+              <input
+                type="text"
+                placeholder="Search here"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
             </a>
           </div>
         </div>

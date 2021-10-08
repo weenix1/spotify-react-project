@@ -1,10 +1,16 @@
 import MusicList from "./MusicList";
 import { fetchData } from "../lib";
 import { useState, useEffect } from "react";
+import { withRouter } from "react-router-dom";
 
-const JumboTracks = () => {
+const JumboTracks = ({ searchQuery }) => {
+  /*  const [q, setQ] = useState();
+  setQ(searchQuery);
+ */
   const BASE_URL =
-    "https://striveschool-api.herokuapp.com/api/deezer/search?q=eminem";
+    searchQuery.length > 3
+      ? `https://striveschool-api.herokuapp.com/api/deezer/search?q=${searchQuery}`
+      : `https://striveschool-api.herokuapp.com/api/deezer/search?q=eminem`;
 
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -15,7 +21,7 @@ const JumboTracks = () => {
       console.log(dataFromEndpoint.data);
     };
     fetchFunction();
-  }, []);
+  }, [searchQuery]);
 
   return (
     <>
@@ -70,4 +76,4 @@ const JumboTracks = () => {
     </>
   );
 };
-export default JumboTracks;
+export default withRouter(JumboTracks);
